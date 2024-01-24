@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Practical12 extends AppCompatActivity
+public class Practical14 extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
