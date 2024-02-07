@@ -1,0 +1,33 @@
+package com.example.test;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class Practical14 extends AppCompatActivity
+{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_practical12);
+
+        Button buttonCheck = findViewById(R.id.ButtonCheck);
+        EditText editText =findViewById(R.id.editText);
+        buttonCheck.setOnClickListener(view -> {
+            String text = editText.getText().toString();
+            if (isPalindrome(text)) {
+                Toast.makeText(this, "Entered word is palindrome", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Entered word is not a Palindrome", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private boolean isPalindrome(String text) {
+        String reverseString = new StringBuilder(text).reverse().toString();
+        return text.equalsIgnoreCase(reverseString);
+    }
+}

@@ -1,0 +1,48 @@
+package com.example.test;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Practical15 extends AppCompatActivity {
+
+    TextView Lblresult , Lblweight ;
+    Button Btnconvert;
+    EditText Editwegiht;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_practical15);
+
+        Controls();
+        Calculate();
+    }
+
+    private void Controls()
+    {
+        Lblresult = findViewById(R.id.Lblresult);
+        Btnconvert = findViewById(R.id.Btnconvert);
+        Editwegiht = findViewById(R.id.Editwegiht);
+        Lblweight = findViewById(R.id.Lblweight);
+    }
+
+    private void Calculate()
+    {
+        Btnconvert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                String weight = Editwegiht.getText().toString();
+                float f=Float.parseFloat(weight);
+                double result = f * 2.205;
+                Lblresult.setText("Result - " + result + " Pounds");
+
+            }
+        });
+    }
+}
